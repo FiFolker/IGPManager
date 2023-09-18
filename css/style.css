@@ -1,0 +1,65 @@
+body{
+    height: 100vh;
+    margin: 0px;
+    padding:0px;
+    overflow: hidden;
+    background-image: url("../img/f1Merco.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    backdrop-filter: sepia(40%) blur(5px);
+    font-family: Montserrat, sans-serif;
+    text-rendering: optimizeLegibility;
+}
+
+.default-button{
+    background-color: #34495E;
+    border: 0;
+    border-radius: 5%;
+    font-size: 1rem;
+    color:#dd5;
+    line-height: 2.5;
+    padding: 0 20px;
+
+}
+
+
+.default-button:hover{
+    background-color: #283847;
+}
+
+.default-button:active{
+    background-color: #314f6bbe;
+}
+
+.tire-setup{
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap:15px;
+}
+
+.tire-setup-table{
+    background-color: #34495E;
+    border-radius: .4em;
+    overflow: hidden;
+    color: #fff;
+    padding:10px;
+}
+
+.tire-setup-table caption {
+    color: #34495E;
+    font-weight: normal;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.tire-setup-table th, td::before{
+    color:#dd5;
+}
+
+.tire-setup-table th, td{
+    text-align: left;
+    padding: 2px 5px;
+}
+
