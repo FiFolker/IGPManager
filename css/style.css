@@ -63,3 +63,14 @@ body{
     padding: 2px 5px;
 }
 
+output{
+    display: inline-block;
+    width: 31px;
+    margin: 0 2px;
+    background-color: #366B6A;
+    text-align: center;
+}
+
+.percent{
+    accent-color:#366B6A;
+}

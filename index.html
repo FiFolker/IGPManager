@@ -6,9 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IGP Manager</title>
     <link rel="stylesheet" href="css/style.css">
+    <script src="script/app.js" defer></script>
 </head>
 <body>
+    
     <div class="tire-setup">
+        <label for="objective">Objective Percent : </label>
+        <input type="text" name="objective" class="objective" maxlength="3" value="70">
         <table class="tire-setup-table">
             <caption>Tire setup</caption>
             <thead>
@@ -21,47 +25,47 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
+                <tr class="SS">
                     <td>Super Soft (SS)</td>
-                    <td><input type="number" name="percentSS" class="percent"></td>
-                    <td><input type="number" name="timePerLapSS" class="timePerLap"></td>
-                    <td>...</td>
-                    <td>...</td>
+                    <td><input type="range" max="100" min="0" value="0" oninput="this.nextElementSibling.value = this.value" name="percentSS" class="percent"><output>0</output></td>
+                    <td><input type="text" maxlength="8" name="timePerLapSS" class="timePerLap"></td>
+                    <td class="lap-min">...</td>
+                    <td class="lap-optimist">...</td>
                 </tr>
-                <tr>
+                <tr class="S">
                     <td>Soft (S)</td>
-                    <td><input type="number" name="percentS" class="percent"></td>
-                    <td><input type="number" name="timePerLapS" class="timePerLap"></td>
-                    <td>...</td>
-                    <td>...</td>
+                    <td><input type="range" max="100" min="0" value="0" oninput="this.nextElementSibling.value = this.value" name="percentS" class="percent"><output>0</output></td>
+                    <td><input type="text" maxlength="8" name="timePerLapS" class="timePerLap"></td>
+                    <td class="lap-min">...</td>
+                    <td class="lap-optimist">...</td>
                 </tr>
-                <tr>
+                <tr class="M">
                     <td>Medium (M)</td>
-                    <td><input type="number" name="percentM" class="percent"></td>
-                    <td><input type="number" name="timePerLapM" class="timePerLap"></td>
-                    <td>...</td>
-                    <td>...</td>
+                    <td><input type="range" max="100" min="0" value="0" oninput="this.nextElementSibling.value = this.value" name="percentM" class="percent"><output>0</output></td>
+                    <td><input type="text" maxlength="8" name="timePerLapM" class="timePerLap"></td>
+                    <td class="lap-min">...</td>
+                    <td class="lap-optimist">...</td>
                 </tr>
-                <tr>
+                <tr class="H">
                     <td>Hard (H)</td>
-                    <td><input type="number" name="percentH" class="percent"></td>
-                    <td><input type="number" name="timePerLapH" class="timePerLap"></td>
-                    <td>...</td>
-                    <td>...</td>
+                    <td><input type="range" max="100" min="0" value="0" oninput="this.nextElementSibling.value = this.value" name="percentH" class="percent"><output>0</output></td>
+                    <td><input type="text" maxlength="8" name="timePerLapH" class="timePerLap"></td>
+                    <td class="lap-min">...</td>
+                    <td class="lap-optimist">...</td>
                 </tr>
-                <tr>
+                <tr class="I">
                     <td>Intermediate (I)</td>
-                    <td><input type="number" name="percentI" class="percent"></td>
-                    <td><input type="number" name="timePerLapI" class="timePerLap"></td>
-                    <td>...</td>
-                    <td>...</td>
+                    <td><input type="range" max="100" min="0" value="0" oninput="this.nextElementSibling.value = this.value" name="percentI" class="percent"><output>0</output></td>
+                    <td><input type="text" maxlength="8" name="timePerLapI" class="timePerLap"></td>
+                    <td class="lap-min">...</td>
+                    <td class="lap-optimist">...</td>
                 </tr>
-                <tr>
+                <tr class="W">
                     <td>Wet (W)</td>
-                    <td><input type="number" name="percentW" class="percent"></td>
-                    <td><input type="number" name="timePerLapW" class="timePerLap"></td>
-                    <td>...</td>
-                    <td>...</td>
+                    <td><input type="range" max="100" min="0" value="0" oninput="this.nextElementSibling.value = this.value" name="percentW" class="percent"><output>0</output></td>
+                    <td><input type="text" maxlength="8" name="timePerLapW" class="timePerLap" ></td>
+                    <td class="lap-min">...</td>
+                    <td class="lap-optimist">...</td>
                 </tr>
             </tbody>
         </table>
