@@ -6,6 +6,8 @@ const objectivePercent = document.querySelector('.objective')
 const raceSelected = document.querySelector('#race-selected');
 const calculButton = document.querySelector('#calculate');
 
+let tyresLaps = [];
+
 let changed = true;
 
 raceSelected.addEventListener("change", () => {
@@ -51,8 +53,8 @@ function calculAllLaps(){
 
 function calculLaps(currInput){
     
-    const lapMin = document.querySelector(`.${currInput.parentNode.parentNode.className} .lap-min`)
-    const lapOptimist = document.querySelector(`.${currInput.parentNode.parentNode.className} .lap-optimist`)
+    const lapMin = document.querySelector(`.${currInput.parentNode.parentNode.classList[0]} .lap-min`)
+    const lapOptimist = document.querySelector(`.${currInput.parentNode.parentNode.classList[0]} .lap-optimist`)
     let result = 0;
     try{
         result = objectivePercent.value/currInput.value;
@@ -69,13 +71,33 @@ function calculLaps(currInput){
         console.log(err.message);
 
     }
-    lapMin.innerHTML = result.toFixed(2);
-    lapOptimist.innerHTML = (result+2).toFixed(2);
+    
+    lapMin.innerHTML = Math.round(result).toString();
+    lapOptimist.innerHTML = Math.round((result+2)).toString();
+    tyresLaps.push(Math.round((result+2)));
 }
 
 calculButton.addEventListener("click", () => {
     let tyreChanged = false;
+    let tyreIndex = 0;
     document.querySelectorAll('.dry').forEach(tyre => {
-        
+        console.dir(tyre);
+
+        console.log(allInputRange[tyreIndex]);
+        let informations = getInformationRace();
+        console.log(tyresLaps[tyreIndex] - informations.laps);
+        console.log(tyresLaps[tyreIndex]);
+        console.log(informations.laps);
+
+        tyreIndex ++;
     });
 })
+
+function getInformationRace(){
+    for (const raceName in setupRace.race) {
+        if(raceName.toString() === raceSelected.value){
+            console.log(setupRace.race.raceName, " : ", raceName.laps);
+            return {"laps":raceName.laps, "PitStop":raceName.PitStop};
+        }
+    }
+}
