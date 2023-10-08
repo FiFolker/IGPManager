@@ -6,10 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IGP Manager</title>
     <link rel="stylesheet" href="css/style.css">
-    <script src="script/app.js" defer></script>
+    <script src="script/app.js" type="module" defer></script>
 </head>
 <body>
-    
+    <div class="setup"></div>
+
     <div class="tire-setup">
         <label for="objective">Objective Percent : </label>
         <input type="text" name="objective" class="objective" maxlength="3" value="70">
@@ -25,42 +26,42 @@
                 </tr>
             </thead>
             <tbody>
-                <tr class="SS">
+                <tr class="SS dry">
                     <td>Super Soft (SS)</td>
                     <td><input type="range" max="100" min="0" value="0" oninput="this.nextElementSibling.value = this.value" name="percentSS" class="percent"><output>0</output></td>
                     <td><input type="text" maxlength="8" name="timePerLapSS" class="timePerLap"></td>
                     <td class="lap-min">...</td>
                     <td class="lap-optimist">...</td>
                 </tr>
-                <tr class="S">
+                <tr class="S dry">
                     <td>Soft (S)</td>
                     <td><input type="range" max="100" min="0" value="0" oninput="this.nextElementSibling.value = this.value" name="percentS" class="percent"><output>0</output></td>
                     <td><input type="text" maxlength="8" name="timePerLapS" class="timePerLap"></td>
                     <td class="lap-min">...</td>
                     <td class="lap-optimist">...</td>
                 </tr>
-                <tr class="M">
+                <tr class="M dry">
                     <td>Medium (M)</td>
                     <td><input type="range" max="100" min="0" value="0" oninput="this.nextElementSibling.value = this.value" name="percentM" class="percent"><output>0</output></td>
                     <td><input type="text" maxlength="8" name="timePerLapM" class="timePerLap"></td>
                     <td class="lap-min">...</td>
                     <td class="lap-optimist">...</td>
                 </tr>
-                <tr class="H">
+                <tr class="H dry">
                     <td>Hard (H)</td>
                     <td><input type="range" max="100" min="0" value="0" oninput="this.nextElementSibling.value = this.value" name="percentH" class="percent"><output>0</output></td>
                     <td><input type="text" maxlength="8" name="timePerLapH" class="timePerLap"></td>
                     <td class="lap-min">...</td>
                     <td class="lap-optimist">...</td>
                 </tr>
-                <tr class="I">
+                <tr class="I wet">
                     <td>Intermediate (I)</td>
                     <td><input type="range" max="100" min="0" value="0" oninput="this.nextElementSibling.value = this.value" name="percentI" class="percent"><output>0</output></td>
                     <td><input type="text" maxlength="8" name="timePerLapI" class="timePerLap"></td>
                     <td class="lap-min">...</td>
                     <td class="lap-optimist">...</td>
                 </tr>
-                <tr class="W">
+                <tr class="W wet">
                     <td>Wet (W)</td>
                     <td><input type="range" max="100" min="0" value="0" oninput="this.nextElementSibling.value = this.value" name="percentW" class="percent"><output>0</output></td>
                     <td><input type="text" maxlength="8" name="timePerLapW" class="timePerLap" ></td>
@@ -69,7 +70,14 @@
                 </tr>
             </tbody>
         </table>
-        <button class="default-button"><span>Calculate</span></button>
+        <select id="race-selected" class="default-button">
+          </select>
+        <button class="default-button" id="calculate"><span>Calculate</span></button>
+    </div>
+    <div id="strategy">
+        <div id="config"></div>
+        <div id="dry"></div>
+        <div id="wet"></div>
     </div>
 </body>
 </html>

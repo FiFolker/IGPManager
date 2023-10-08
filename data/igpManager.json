@@ -1,0 +1,414 @@
+{
+	"race" : {
+		"Australia" : {
+			"laps": 57,
+			"Pit Stop": 17,
+			"Suspension" : "Neutral",
+			"Elite" : {
+				"ride" : 38,
+				"wings" : 20
+			},
+			"Pro" : {
+				"ride" : 19,
+				"wings" : 10
+			},
+			"Rookie" : {
+				"ride" : 9,
+				"wings" : 6
+			}
+		},
+		"Malaysia" : {
+			"laps": 55,
+			"Pit Stop": 20,
+			"Suspension" : "Neutral",
+			"Elite" : {
+				"ride" : 23,
+				"wings" : 10
+			},
+			"Pro" : {
+				"ride" : 12,
+				"wings" : 5
+			},
+			"Rookie" : {
+				"ride" : 6,
+				"wings" : 2
+			}
+		},
+		"China" : {
+			"laps": 60,
+			"Pit Stop": 25,
+			"Suspension" : "Neutral",
+			"Elite" : {
+				"ride" : 10,
+				"wings" : 15
+			},
+			"Pro" : {
+				"ride" : 5,
+				"wings" : 8
+			},
+			"Rookie" : {
+				"ride" : 2,
+				"wings" : 4
+			}
+		},
+		"Bahrain" : {
+			"laps": 60,
+			"Pit Stop": 18,
+			"Suspension" : "Firm",
+			"Elite" : {
+				"ride" : 15,
+				"wings" : 5
+			},
+			"Pro" : {
+				"ride" : 8,
+				"wings" : 3
+			},
+			"Rookie" : {
+				"ride" : 4,
+				"wings" : 1
+			}
+		},
+		"Spain" : {
+			"laps": 62,
+			"Pit Stop": 17,
+			"Suspension" : "Soft",
+			"Elite" : {
+				"ride" : 10,
+				"wings" : 25
+			},
+			"Pro" : {
+				"ride" : 5,
+				"wings" : 13
+			},
+			"Rookie" : {
+				"ride" : 2,
+				"wings" : 6
+			}
+		},
+		"Monaco" : {
+			"laps": 59,
+			"Pit Stop": 16,
+			"Suspension" : "Soft",
+			"Elite" : {
+				"ride" : 43,
+				"wings" : 40
+			},
+			"Pro" : {
+				"ride" : 22,
+				"wings" : 20
+			},
+			"Rookie" : {
+				"ride" : 11,
+				"wings" : 10
+			}
+		},
+		"Turkey" : {
+			"laps": 54,
+			"Pit Stop": 17,
+			"Suspension" : "Neutral",
+			"Elite" : {
+				"ride" : 25,
+				"wings" : 15
+			},
+			"Pro" : {
+				"ride" : 13,
+				"wings" : 8
+			},
+			"Rookie" : {
+				"ride" : 6,
+				"wings" : 4
+			}
+		},
+		"Germany" : {
+			"laps": 60,
+			"Pit Stop": 22,
+			"Suspension" : "Neutral",
+			"Elite" : {
+				"ride" : 15,
+				"wings" : 15
+			},
+			"Pro" : {
+				"ride" : 8,
+				"wings" : 8
+			},
+			"Rookie" : {
+				"ride" : 4,
+				"wings" : 4
+			}
+		},
+		"Hungary" : {
+			"laps": 79,
+			"Pit Stop": 19,
+			"Suspension" : "Soft",
+			"Elite" : {
+				"ride" : 20,
+				"wings" : 30
+			},
+			"Pro" : {
+				"ride" : 10,
+				"wings" : 15
+			},
+			"Rookie" : {
+				"ride" : 5,
+				"wings" : 7
+			}
+		},
+		"Europe" : {
+			"laps": 50,
+			"Pit Stop": 13,
+			"Suspension" : "Soft",
+			"Elite" : {
+				"ride" : 23,
+				"wings" : 25
+			},
+			"Pro" : {
+				"ride" : 12,
+				"wings" : 13
+			},
+			"Rookie" : {
+				"ride" : 6,
+				"wings" : 7
+			}
+		},
+		"Belgium" : {
+			"laps": 43,
+			"Pit Stop": 16,
+			"Suspension" : "Neutral",
+			"Elite" : {
+				"ride" : 23,
+				"wings" : 17
+			},
+			"Pro" : {
+				"ride" : 12,
+				"wings" : 9
+			},
+			"Rookie" : {
+				"ride" : 6,
+				"wings" : 4
+			}
+		},
+		"Italy" : {
+			"laps": 51,
+			"Pit Stop": 18,
+			"Suspension" : "Firm",
+			"Elite" : {
+				"ride" : 23,
+				"wings" : 1
+			},
+			"Pro" : {
+				"ride" : 12,
+				"wings" : 1
+			},
+			"Rookie" : {
+				"ride" : 6,
+				"wings" : 1
+			}
+		},
+		"Singapore" : {
+			"laps": 60,
+			"Pit Stop": 17,
+			"Suspension" : "Soft",
+			"Elite" : {
+				"ride" : 33,
+				"wings" : 32
+			},
+			"Pro" : {
+				"ride" : 17,
+				"wings" : 16
+			},
+			"Rookie" : {
+				"ride" : 9,
+				"wings" : 8
+			}
+		},
+		"Japan" : {
+			"laps": 55,
+			"Pit Stop": 19,
+			"Suspension" : "Soft",
+			"Elite" : {
+				"ride" : 23,
+				"wings" : 25
+			},
+			"Pro" : {
+				"ride" : 12,
+				"wings" : 13
+			},
+			"Rookie" : {
+				"ride" : 6,
+				"wings" : 7
+			}
+		},
+		"Brazil" : {
+			"laps": 60,
+			"Pit Stop": 19,
+			"Suspension" : "Neutral",
+			"Elite" : {
+				"ride" : 15,
+				"wings" : 15
+			},
+			"Pro" : {
+				"ride" : 8,
+				"wings" : 8
+			},
+			"Rookie" : {
+				"ride" : 4,
+				"wings" : 4
+			}
+		},
+		"Abu Dhabi" : {
+			"laps": 60,
+			"Pit Stop": 18,
+			"Suspension" : "Neutral",
+			"Elite" : {
+				"ride" : 25,
+				"wings" : 10
+			},
+			"Pro" : {
+				"ride" : 13,
+				"wings" : 5
+			},
+			"Rookie" : {
+				"ride" : 6,
+				"wings" : 2
+			}
+		},
+		"Great Britain" : {
+			"laps": 60,
+			"Pit Stop": 22,
+			"Suspension" : "Firm",
+			"Elite" : {
+				"ride" : 18,
+				"wings" : 5
+			},
+			"Pro" : {
+				"ride" : 9,
+				"wings" : 3
+			},
+			"Rookie" : {
+				"ride" : 4,
+				"wings" : 2
+			}
+		},
+		"France" : {
+			"laps": 60,
+			"Pit Stop": 17,
+			"Suspension" : "Neutral",
+			"Elite" : {
+				"ride" : 33,
+				"wings" : 15
+			},
+			"Pro" : {
+				"ride" : 17,
+				"wings" : 8
+			},
+			"Rookie" : {
+				"ride" : 8,
+				"wings" : 4
+			}
+		},
+		"Austria" : {
+			"laps": 60,
+			"Pit Stop": 20,
+			"Suspension" : "Firm",
+			"Elite" : {
+				"ride" : 18,
+				"wings" : 5
+			},
+			"Pro" : {
+				"ride" : 9,
+				"wings" : 3
+			},
+			"Rookie" : {
+				"ride" : 4,
+				"wings" : 2
+			}
+		},
+		"Canada" : {
+			"laps": 63,
+			"Pit Stop": 14,
+			"Suspension" : "Firm",
+			"Elite" : {
+				"ride" : 18,
+				"wings" : 1
+			},
+			"Pro" : {
+				"ride" : 9,
+				"wings" : 1
+			},
+			"Rookie" : {
+				"ride" : 4,
+				"wings" : 1
+			}
+		},
+		"Azerbaijan" : {
+			"laps": 60,
+			"Pit Stop": 23,
+			"Suspension" : "Neutral",
+			"Elite" : {
+				"ride" : 33,
+				"wings" : 10
+			},
+			"Pro" : {
+				"ride" : 17,
+				"wings" : 5
+			},
+			"Rookie" : {
+				"ride" : 8,
+				"wings" : 2
+			}
+		}
+		,
+		"Mexico" : {
+			"laps": 60,
+			"Pit Stop": 20,
+			"Suspension" : "Neutral",
+			"Elite" : {
+				"ride" : 13,
+				"wings" : 15
+			},
+			"Pro" : {
+				"ride" : 7,
+				"wings" : 8
+			},
+			"Rookie" : {
+				"ride" : 3,
+				"wings" : 4
+			}
+		},
+		"Russia" : {
+			"laps": 46,
+			"Pit Stop": 20,
+			"Suspension" : "Neutral",
+			"Elite" : {
+				"ride" : 8,
+				"wings" : 15
+			},
+			"Pro" : {
+				"ride" : 4,
+				"wings" : 8
+			},
+			"Rookie" : {
+				"ride" : 2,
+				"wings" : 4
+			}
+		},
+		"USA" : {
+			"laps": 60,
+			"Pit Stop": 19,
+			"Suspension" : "Neutral",
+			"Elite" : {
+				"ride" : 8,
+				"wings" : 12
+			},
+			"Pro" : {
+				"ride" : 4,
+				"wings" : 6
+			},
+			"Rookie" : {
+				"ride" : 2,
+				"wings" : 3
+			}
+		}
+	}
+	
+}
