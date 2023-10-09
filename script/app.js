@@ -1,5 +1,5 @@
-import setupRace from '../data/igpManager.json' assert {type: 'json'}
-import config from '../data/config.json' assert {type: 'json'}
+import setupRace from '../data/igpManager.json' assert {type: 'json'};
+import config from '../data/config.json' assert {type: 'json'};
 
 const allInputRange = document.querySelectorAll('.percent');
 const objectivePercent = document.querySelector('.objective')
@@ -7,7 +7,7 @@ const raceSelected = document.querySelector('#race-selected');
 const calculButton = document.querySelector('#calculate');
 
 let tyresLaps = [];
-
+let strategies = {};
 let changed = true;
 
 raceSelected.addEventListener("change", () => {
@@ -84,20 +84,16 @@ calculButton.addEventListener("click", () => {
         console.dir(tyre);
 
         console.log(allInputRange[tyreIndex]);
-        let informations = getInformationRace();
-        console.log(tyresLaps[tyreIndex] - informations.laps);
+        console.log(setupRace.race[raceSelected.value].PitStop);
+        console.log(setupRace.race[raceSelected.value].laps - tyresLaps[tyreIndex]);
         console.log(tyresLaps[tyreIndex]);
-        console.log(informations.laps);
+        console.log(setupRace.race[raceSelected.value].laps);
 
         tyreIndex ++;
     });
 })
 
-function getInformationRace(){
-    for (const raceName in setupRace.race) {
-        if(raceName.toString() === raceSelected.value){
-            console.log(setupRace.race.raceName, " : ", raceName.laps);
-            return {"laps":raceName.laps, "PitStop":raceName.PitStop};
-        }
-    }
+function generateAllTyresSetPossible(){
+    let tyresSets = [];
+    
 }
