@@ -3,5 +3,7 @@
     "tiers":"Elite",
     "rideExcess" : 0,
     "lastRaceSelected" : "Australia",
-    "lapExcess" : 2
+    "lapExcess" : 2,
+    "maxPitStop" : 4,
+    "minPitStop" : 2
 }

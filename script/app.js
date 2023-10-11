@@ -79,13 +79,8 @@ function calculLaps(currInput){
 }
 
 calculButton.addEventListener("click", () => {
-	const tireComponents = [
-		{ name: 'SS', laps: tyresLaps.get('SS') },
-		{ name: 'S', laps: tyresLaps.get('S') },
-		{ name: 'M', laps: tyresLaps.get('M') },
-		{ name: 'H', laps: tyresLaps.get('H') }
-	];
-	console.log(generatePitStrategies(tireComponents, 4, 2, setupRace.race[raceSelected.value].laps));
+	const tireComponents = [ 'SS', 'S', 'M', 'H'];
+	console.log(generatePitStrategies(tireComponents, config.maxPitStop, config.minPitStop, setupRace.race[raceSelected.value].laps));
 	// document.querySelectorAll('.dry').forEach(tyre => {
 	//     console.dir(tyre);
 
@@ -100,15 +95,20 @@ calculButton.addEventListener("click", () => {
 })
 
 function generatePitStrategies(tireComponents, maxTireChanges, minTireChanges, raceLaps) {
-	const pitStrategies = [];
+	const pitStrategies = new Object();
 
 	// Fonction récursive pour générer les combinaisons de pneus
 	function generateCombinations(currentCombination, remainingChanges, currentIndex) {
 		if (currentCombination.length === maxTireChanges || currentIndex === tireComponents.length) {
 			// Vérifier si la combinaison est valide
-			const totalLaps = currentCombination.reduce((total, component) => total + component.laps, 0);
+			const totalLaps = currentCombination.reduce((total, component) => total + tyresLaps.get(component), 0);
+            // console.log(currentCombination);
 			if (totalLaps >= raceLaps && currentCombination.length >= minTireChanges) {
-				pitStrategies.push([...currentCombination]);
+				pitStrategies[Object.keys(pitStrategies).length] = {
+                    "tyreSet ": [...currentCombination],
+                    "totalTime": calculTotalTime([...currentCombination])
+                };
+                console.log(pitStrategies);
 			}
 			return;
 		}
@@ -126,4 +126,23 @@ function generatePitStrategies(tireComponents, maxTireChanges, minTireChanges, r
 	generateCombinations([], maxTireChanges, 0);
 
 	return pitStrategies;
+}
+
+function countOccurence(array, occurenceToCheck){
+    
+}
+
+function calculTotalTime(tyreSet){
+    let totalTime = setupRace.race[raceSelected.value].PitStop*tyreSet.length;
+    tyreSet.forEach(tyreName => {
+        console.log(tyreName);
+        let tyreTime = document.querySelector(`.${tyreName} .timePerLap`).value;
+        totalTime += convertMinToSec(tyreTime);
+    })
+    console.log(tyreSet,":",totalTime);
+    return totalTime;
+}
+
+function convertMinToSec(toConvert){
+    return parseFloat(toConvert.split('.')[0] *60) + parseFloat(toConvert.split('.')[1]) + parseFloat("0."+toConvert.split('.')[2])
 }
