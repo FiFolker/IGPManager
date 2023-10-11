@@ -307,7 +307,7 @@
 			}
 		},
 		"Austria" : {
-			"laps": 60,
+			"laps": 68,
 			"PitStop": 20,
 			"Suspension" : "Firm",
 			"Elite" : {
@@ -359,7 +359,7 @@
 		}
 		,
 		"Mexico" : {
-			"laps": 60,
+			"laps": 66,
 			"PitStop": 20,
 			"Suspension" : "Neutral",
 			"Elite" : {

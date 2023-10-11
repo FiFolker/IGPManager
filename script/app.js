@@ -5,6 +5,7 @@ const allInputRange = document.querySelectorAll('.percent');
 const objectivePercent = document.querySelector('.objective')
 const raceSelected = document.querySelector('#race-selected');
 const calculButton = document.querySelector('#calculate');
+const strategyPlace = document.querySelector('#strategy');
 
 let tyresLaps = new Map();
 let strategies = {};
@@ -75,23 +76,15 @@ function calculLaps(currInput){
 	lapMin.innerHTML = Math.round(result).toString();
 	lapOptimist.innerHTML = Math.round((result+2)).toString();
 	tyresLaps.set(currInput.parentNode.parentNode.classList[0].toString(), Math.round((result+2)));
-	console.log(currInput.parentNode.parentNode.classList[0].toString());
 }
 
 calculButton.addEventListener("click", () => {
 	const tireComponents = [ 'SS', 'S', 'M', 'H'];
-	console.log(generatePitStrategies(tireComponents, config.maxPitStop, config.minPitStop, setupRace.race[raceSelected.value].laps));
-	// document.querySelectorAll('.dry').forEach(tyre => {
-	//     console.dir(tyre);
-
-	//     console.log(allInputRange[tyreIndex]);
-	//     console.log(setupRace.race[raceSelected.value].PitStop);
-	//     console.log(setupRace.race[raceSelected.value].laps - tyresLaps[tyreIndex]);
-	//     console.log(tyresLaps[tyreIndex]);
-	//     console.log(setupRace.race[raceSelected.value].laps);
-
-	//     tyreIndex ++;
-	// });
+	let pitStrategies = generatePitStrategies(tireComponents, config.maxPitStop, config.minPitStop, setupRace.race[raceSelected.value].laps);
+	let index = chooseBestStrategies(pitStrategies);
+	document.querySelector('#strategy #config').innerText = "config : ride -> " + setupRace.race[raceSelected.value][config.tiers]["ride"] + " : wings -> " + setupRace.race[raceSelected.value][config.tiers]["wings"];
+	document.querySelector('#strategy #dry').innerText = "Strategy Dry : " + pitStrategies[index].tyreSet + "\nEstimated time : " + pitStrategies[index].totalTime;
+	
 })
 
 function generatePitStrategies(tireComponents, maxTireChanges, minTireChanges, raceLaps) {
@@ -103,12 +96,11 @@ function generatePitStrategies(tireComponents, maxTireChanges, minTireChanges, r
 			// Vérifier si la combinaison est valide
 			const totalLaps = currentCombination.reduce((total, component) => total + tyresLaps.get(component), 0);
             // console.log(currentCombination);
-			if (totalLaps >= raceLaps && currentCombination.length >= minTireChanges) {
+			if (totalLaps >= raceLaps && totalLaps < raceLaps+config.lapExcess && currentCombination.length >= minTireChanges && !notAllSame([...currentCombination])) {
 				pitStrategies[Object.keys(pitStrategies).length] = {
-                    "tyreSet ": [...currentCombination],
+                    "tyreSet": [...currentCombination],
                     "totalTime": calculTotalTime([...currentCombination])
                 };
-                console.log(pitStrategies);
 			}
 			return;
 		}
@@ -128,21 +120,36 @@ function generatePitStrategies(tireComponents, maxTireChanges, minTireChanges, r
 	return pitStrategies;
 }
 
-function countOccurence(array, occurenceToCheck){
-    
+function notAllSame(array){
+    return array.every((val, i, arr) => val === arr[0]);
 }
 
 function calculTotalTime(tyreSet){
     let totalTime = setupRace.race[raceSelected.value].PitStop*tyreSet.length;
     tyreSet.forEach(tyreName => {
-        console.log(tyreName);
         let tyreTime = document.querySelector(`.${tyreName} .timePerLap`).value;
         totalTime += convertMinToSec(tyreTime);
     })
-    console.log(tyreSet,":",totalTime);
     return totalTime;
 }
 
 function convertMinToSec(toConvert){
     return parseFloat(toConvert.split('.')[0] *60) + parseFloat(toConvert.split('.')[1]) + parseFloat("0."+toConvert.split('.')[2])
+}
+
+function chooseBestStrategies(strategies){
+	let best;
+	let index;
+	for (const strategy in strategies) {
+		if(best >= strategies[strategy].totalTime || best === undefined){
+			if(best > strategies[strategy].totalTime){
+				best = undefined;
+				index = undefined;
+			}
+			best = strategies[strategy].totalTime;
+			index = strategy;
+			
+		}
+	}
+	return index;
 }
