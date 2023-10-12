@@ -37,7 +37,20 @@ objectivePercent.addEventListener("change", () => {
 })
 
 allInputRange.forEach(input =>{
-	input.addEventListener("change", () => {
+	input.addEventListener("input", () => {
+
+		if(input.value.length > 3){
+			console.log("> que 3 chiffres");
+			input.value = input.value.slice(0, 3);
+		}else if(input.value > 100){
+			console.log("> que 100");
+			input.value = input.value.slice(0, 2);
+			
+		}
+		input.nextElementSibling.value = input.value
+		if(input.value == ""){
+			input.nextElementSibling.value = 0;
+		}
 		calculLaps(input)
 	})
 })
@@ -95,7 +108,6 @@ function generatePitStrategies(tireComponents, maxTireChanges, minTireChanges, r
 		if (currentCombination.length === maxTireChanges || currentIndex === tireComponents.length) {
 			// Vérifier si la combinaison est valide
 			const totalLaps = currentCombination.reduce((total, component) => total + tyresLaps.get(component), 0);
-            // console.log(currentCombination);
 			if (totalLaps >= raceLaps && totalLaps < raceLaps+config.lapExcess && currentCombination.length >= minTireChanges && !notAllSame([...currentCombination])) {
 				pitStrategies[Object.keys(pitStrategies).length] = {
                     "tyreSet": [...currentCombination],
